@@ -40,6 +40,7 @@ Both Base Packs are available here: https://unofficialsf.com/flow-action-and-scr
   
 ---
 **Install Datatable**  
+  
 <a href="https://githubsfdeploy.herokuapp.com">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
