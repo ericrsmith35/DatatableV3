@@ -75,6 +75,10 @@ export default class DatatableCPE extends LightningElement {
     selectedSObject = '';
     isSObjectInput = true;
     isRecordCollectionSelected = false;
+    disableAllowALl = false;
+    isDisplayAll = true;
+    isDisplayAll_Label = 'Display ALL Objects for Selection';
+    isDisplayAll_HelpText = 'Select if you want the Object picklist to display all Standard and Custom Salesforce Objects.';
     isCheckboxColumnHidden = false;
     isShowCheckboxColumn = false;
     isNoEdits = true;
@@ -95,6 +99,11 @@ export default class DatatableCPE extends LightningElement {
     @api
     get isObjectSelected() { 
         return !!this.selectedSObject;
+    }
+
+    @api
+    get availableObjectTypes() {        // Allow admin to specify All object types
+        return (this.isDisplayAll) ? 'All' : '';
     }
 
     @api
@@ -379,6 +388,9 @@ export default class DatatableCPE extends LightningElement {
         },
         {name: 'advancedAttributes',
             attributes: [
+                {name: defaults.customHelpDefinition,
+                    label: this.isDisplayAll_Label,
+                    helpText: this.isDisplayAll_HelpText},
                 {name: 'isUserDefinedObject'},
                 {name: defaults.customHelpDefinition, 
                     label: 'Apex Defined Object Attributes', 
@@ -477,7 +489,7 @@ export default class DatatableCPE extends LightningElement {
             if (curInputParam.name && curInputParam.value != null) {
                 console.log('Init:', curInputParam.name, curInputParam.value);             
                 if (curInputParam.name && this.inputValues[curInputParam.name] != null) {
-                    
+
                     this.inputValues[curInputParam.name].value = (curInputParam.valueDataType === 'reference') ? '{!' + curInputParam.value + '}' : decodeURIComponent(curInputParam.value);                
                     this.inputValues[curInputParam.name].valueDataType = curInputParam.valueDataType;
 
@@ -506,11 +518,10 @@ export default class DatatableCPE extends LightningElement {
                     if ((curInputParam.name == 'columnEdits') && curInputParam.value) {
                         this.isNoEdits = false;
                     }
-
                     if ((curInputParam.name == 'columnFilters') && curInputParam.value) {
                         this.isNoFilters = false;
                     }
-
+                    
                     // Handle Wizard Attributes
                     let wizName = defaults.wizardAttributePrefix + curInputParam.name;
                     if (this.flowParams.find(fp => fp.name == wizName)) {
@@ -641,6 +652,10 @@ export default class DatatableCPE extends LightningElement {
                     this.selectedSObject = null;
                     this.dispatchFlowValueChangeEvent('objectName', this.selectedSObject, 'String');
                 }
+                if (event.target.checked) {
+                    this.isDisplayAll = false;    // Clear & Disable Display All Selection when selecting User Defined Object
+                }
+                this.disableAllowAll = event.target.checked;
             }
 
             // Handle isDisplayHeader
@@ -683,6 +698,15 @@ export default class DatatableCPE extends LightningElement {
     
     }
 
+    handleAllowAllChange(event) {
+        this.isDisplayAll = event.target.checked;
+        // this.inputValues.isUserDefinedObject.value = false;
+        // this.dispatchFlowValueChangeEvent('isUserDefinedObject', false, 'Boolean');
+        this.inputValues.objectName.value = null;
+        this.selectedSObject = null;
+        this.dispatchFlowValueChangeEvent('objectName',this.selectedSObject, 'String');
+    }
+
     handleHeightChange(event) { 
         this.wizardHeight = event.target.value;
     }
@@ -705,7 +729,7 @@ export default class DatatableCPE extends LightningElement {
         if (event.target && event.detail) {
             let changedAttribute = event.target.name.replace(defaults.inputAttributePrefix, '');
             this.dispatchFlowValueChangeEvent(changedAttribute, event.detail.newValue, event.detail.newValueDataType);
-
+            
             if (changedAttribute == 'tableData') {
                 this.isRecordCollectionSelected = !!event.detail.newValue;
             }
