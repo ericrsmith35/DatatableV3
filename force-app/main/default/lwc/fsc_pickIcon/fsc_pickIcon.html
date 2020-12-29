@@ -1,0 +1,44 @@
+<template>
+    <lightning-tabset>
+        <lightning-tab 
+            label="Standard Icons" 
+            icon-name="standard:case"
+            title="Standard and Custom Object icons represent Salesforce entities and objects (Account, Case, etc.)">
+            <div style="height: 300px;">
+                <c-searchable-data-table search-placeholder="Search ..." key-field="id" table-data={standardIcons}
+                    columns={columns} max-row-selection="1" onrowselection={iconSelected}> 
+                </c-searchable-data-table>
+            </div>
+        </lightning-tab>
+        <lightning-tab 
+            label="Action Icons" 
+            icon-name="action:flow"
+            title="Action icons are for use with quick actions on touch-screen devices">
+            <!-- <div style="height: 300px;"> -->
+                <c-searchable-data-table search-placeholder="Search ..." key-field="id" table-data={actionIcons}
+                    columns={columns} max-row-selection="1" onrowselection={iconSelected}>
+                </c-searchable-data-table>
+            <!-- </div> -->
+        </lightning-tab>
+        <lightning-tab 
+            label="Custom Icons" 
+            icon-name="custom:custom61"
+            title="Standard and Custom Object icons represent Salesforce entities and objects (Account, Case, etc.)">
+            <!-- <div style="height: 300px;"> -->
+                <c-searchable-data-table search-placeholder="Search ..." key-field="id" table-data={customIcons}
+                    columns={columns} max-row-selection="1" onrowselection={iconSelected}>
+                </c-searchable-data-table>
+            </div>
+        </lightning-tab>
+        <lightning-tab 
+            label="Utility Icons" 
+            icon-name="utility:einstein"
+            title="Utility icons are simple, single-color glyphs that identify labels and actions across form factors">
+            <!-- <div style="height: 300px;"> -->
+                <c-searchable-data-table search-placeholder="Search ..." key-field="id" table-data={utilityIcons}
+                    columns={columns} max-row-selection="1" onrowselection={iconSelected}>
+                </c-searchable-data-table>
+            </div>
+        </lightning-tab>
+    </lightning-tabset>
+</template>
