@@ -62,12 +62,17 @@ In order to use **datatable**, permission must be given to access the following 
     
 ---
 ## Release Notes
+**12/30/20 -  Eric Smith -    Version 3.0.5** -  
+            **Updates:**        Added Icon Pickers to the CPE and Column Wizard  (Requires FlowScreenComponentBasePack v2.1.2 or later)
+                            Changed 'Display ALL Objects for Selection' checkbox to default to unchecked  
+            **Bug Fixes:**      tbd  
+  
 **12/14/20 -  Eric Smith -    Version 3.0.0** -  
             **Updates:**        New Custom Property Editor for Configuration  
                             Clear button added when using single record selection  
                             Fixed row number display when >99 rows  
             **Bug Fixes:**      Sandbox URLs with __c in their name will now provide valid links for lookups  
-
+  
 **10/14/20 -  Eric Smith -    Version 2.47** -  
             **Bug Fix:**        Display correct icon for Table Header (was always showing standard:account icon)
   

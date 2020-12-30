@@ -1,5 +1,7 @@
 import { LightningElement, track,api } from 'lwc';
 
+const TABLE_STYLE = "height: 400px; width:99%";
+
 const ACTION_ICONS = [
     { 'iconName': 'action:add_contact', 'id': 'action:add_contact' },
     { 'iconName': 'action:add_file', 'id': 'action:add_file' },
@@ -895,9 +897,10 @@ const UTILITY_ICONS = [
     { 'iconName': 'utility:zoomout', 'id': 'utility:zoomout' }
 ]
 const columns = [
-    { label: 'Icon', fieldName: 'id',cellAttributes:{ iconName: { fieldName: 'iconName' } }}
+    { label: 'Icon', fieldName: 'id', cellAttributes:{ iconName: { fieldName: 'iconName' } }}
 ];
 export default class ObjectIconSelector extends LightningElement {
+
     @track actionIcons = ACTION_ICONS;
     @track customIcons = CUSTOM_ICONS;
     @track utilityIcons = UTILITY_ICONS;
@@ -905,9 +908,27 @@ export default class ObjectIconSelector extends LightningElement {
     @track columns = columns;
 
     @api iconName = null;
+    
+    @api 
+    get tabStyle() {
+        let style;
+        if (this.firstTabHeight) {
+            style = `height: ${this.firstTabHeight}px`;
+        }
+        return style;
+    }
+
+    @api
+    get tableStyle() {
+        return TABLE_STYLE;
+    }
+
+    @api firstTabHeight;
 
     iconSelected(event){
         const selRow = event.detail.selectedRows[0];
         this.iconName=selRow.iconName;
+        const iconSelectedEvent = new CustomEvent('iconselection', { detail: this.iconName });
+        this.dispatchEvent(iconSelectedEvent);
     }
 }

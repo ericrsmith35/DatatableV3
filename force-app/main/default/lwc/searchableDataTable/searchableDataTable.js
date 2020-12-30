@@ -33,11 +33,22 @@ export default class SearchableDataTable extends LightningElement {
     @track searchText;
     
     @track filteredData;
+    @track isGettingIcons;
 
     get dataForTable() {
         return (this.filteredData && this.filteredData.length > 0) ? this.filteredData : this.tableData;
     }
-    
+
+    connectedCallback() {
+        this.isGettingIcons = true;
+    }
+
+    renderedCallback() {
+        if (this.isGettingIcons) {
+            this.isGettingIcons = false;
+        }
+    }
+
     onRowSelection(event){
         const rowSelectedEvent = new CustomEvent('rowselection', { detail: event.detail });
         this.dispatchEvent(rowSelectedEvent);
