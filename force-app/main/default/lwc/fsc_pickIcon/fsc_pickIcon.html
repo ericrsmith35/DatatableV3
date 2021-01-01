@@ -6,7 +6,7 @@ This component allows the user to display and select a Salesforce icon
 
     Additional components packaged with this LWC:
 
-                        Lightning Web Components:   searchableDataTable
+                        Lightning Web Components:   fsc_searchableDataTable
 
                         Apex Classes:               
 
@@ -43,9 +43,9 @@ RELEASE NOTES:
                         icon-name="standard:case"
                         title="Standard and Custom Object icons represent Salesforce entities and objects (Account, Case, etc.)">
                         <div style={tabHeight}>
-                            <c-searchable-data-table search-placeholder="Search ..." key-field="id" table-data={standardIcons}
+                            <c-fsc_searchable-data-table search-placeholder="Search ..." key-field="id" table-data={standardIcons}
                                 columns={columns} max-row-selection="1" onrowselection={iconSelected} table-style={tableStyle}> 
-                            </c-searchable-data-table>
+                            </c-fsc_searchable-data-table>
                         </div>
                     </lightning-tab>
                     <lightning-tab 
@@ -53,9 +53,9 @@ RELEASE NOTES:
                         icon-name="action:flow"
                         title="Action icons are for use with quick actions on touch-screen devices">
                         <div style={tabHeight}>
-                            <c-searchable-data-table search-placeholder="Search ..." key-field="id" table-data={actionIcons}
+                            <c-fsc_searchable-data-table search-placeholder="Search ..." key-field="id" table-data={actionIcons}
                                 columns={columns} max-row-selection="1" onrowselection={iconSelected} table-style={tableStyle}>
-                            </c-searchable-data-table>
+                            </c-fsc_searchable-data-table>
                         </div>
                     </lightning-tab>
                     <lightning-tab 
@@ -63,9 +63,9 @@ RELEASE NOTES:
                         icon-name="custom:custom61"
                         title="Standard and Custom Object icons represent Salesforce entities and objects (Account, Case, etc.)">
                         <div style={tabHeight}>
-                            <c-searchable-data-table search-placeholder="Search ..." key-field="id" table-data={customIcons}
+                            <c-fsc_searchable-data-table search-placeholder="Search ..." key-field="id" table-data={customIcons}
                                 columns={columns} max-row-selection="1" onrowselection={iconSelected} table-style={tableStyle}>
-                            </c-searchable-data-table>
+                            </c-fsc_searchable-data-table>
                         </div>
                     </lightning-tab>
                     <lightning-tab 
@@ -73,9 +73,9 @@ RELEASE NOTES:
                         icon-name="utility:einstein"
                         title="Utility icons are simple, single-color glyphs that identify labels and actions across form factors">
                         <div style={tabHeight}>
-                            <c-searchable-data-table search-placeholder="Search ..." key-field="id" table-data={utilityIcons}
+                            <c-fsc_searchable-data-table search-placeholder="Search ..." key-field="id" table-data={utilityIcons}
                                 columns={columns} max-row-selection="1" onrowselection={iconSelected} table-style={tableStyle}>
-                            </c-searchable-data-table>
+                            </c-fsc_searchable-data-table>
                         </div>
                     </lightning-tab>
                 </lightning-tabset>
