@@ -60,7 +60,6 @@ In order to use **datatable**, permission must be given to access the following 
 # Release Notes
 ## 01/01/21 -  Eric Smith -    Version 3.0.5 
 **Updates:**
- 
 -   Added Icon Pickers to the CPE and Column Wizard  (Requires FlowScreenComponentBasePack v2.1.2 or later)
 -   Changed 'Display ALL Objects for Selection' checkbox to default to unchecked  
  
