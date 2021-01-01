@@ -27,10 +27,10 @@ Additional components packaged with this LWC:
 **Created by:**	Eric Smith  
 **Date:**		2019 - 2021
   
-LinkedIn: https://www.linkedin.com/in/ericrsmith2  
+LinkedIn: 	https://www.linkedin.com/in/ericrsmith2  
 Salesforce: https://trailblazer.me/id/ericsmith  
-Blog: https://ericsplayground.wordpress.com/blog/  
-Twitter: https://twitter.com/esmith35  
+Blog:		https://ericsplayground.wordpress.com/blog/  
+Twitter: 	https://twitter.com/esmith35  
 
 ---
 **You must install these components FIRST in order to install and use the Datatable component**     
