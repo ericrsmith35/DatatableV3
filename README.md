@@ -25,7 +25,7 @@ Additional components packaged with this LWC:
 **Documentation:**  https://unofficialsf.com/datatable-lightning-web-component-for-flow-screens-2/ 
   
 **Created by:**	Eric Smith  
-**Date:**		2019 - 2020
+**Date:**		2019 - 2021
   
 LinkedIn: https://www.linkedin.com/in/ericrsmith2  
 Salesforce: https://trailblazer.me/id/ericsmith  
@@ -34,8 +34,8 @@ Twitter: https://twitter.com/esmith35
 
 ---
 **You must install these components FIRST in order to install and use the Datatable component**     
-FlowActionsBasePack Version 2.6.0 or later  
-FlowScreenComponentsBasePack Version 2.1.0 or later  
+FlowActionsBasePack Version 2.12 or later  
+FlowScreenComponentsBasePack Version 2.1.3 or later  
   
 Both Base Packs are available here:   
 https://unofficialsf.com/flow-action-and-screen-component-basepacks/
@@ -43,11 +43,7 @@ https://unofficialsf.com/flow-action-and-screen-component-basepacks/
 ---
 **Install Datatable**  
    
-<a href="https://githubsfdeploy.herokuapp.com">
-  <img alt="Deploy to Salesforce"
-       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
-</a>
- 
+
 ---
 **Starting with the Winter '21 Release, Salesforce requires that a User's Profile or Permission Set is given specific permission to access any @AuraEnabled Apex Method.**  
 
