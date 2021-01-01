@@ -63,6 +63,7 @@ In order to use **datatable**, permission must be given to access the following 
  
 -   Added Icon Pickers to the CPE and Column Wizard  (Requires FlowScreenComponentBasePack v2.1.2 or later)
 -   Changed 'Display ALL Objects for Selection' checkbox to default to unchecked  
+ 
 **Bug Fixes:**
 -   Removed field names from Empty Table Header
 -   Fixed "Apex CPU time limit exceeded" error (FlowActionsBasePack v2.9 or greater)    
