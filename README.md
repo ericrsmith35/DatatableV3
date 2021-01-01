@@ -77,7 +77,8 @@ In order to use **datatable**, permission must be given to access the following 
 -   Sandbox URLs with __c in their name will now provide valid links for lookups  
   
 ## 10/14/20 -  Eric Smith -    Version 2.47 
-            **Bug Fix:**        Display correct icon for Table Header (was always showing standard:account icon)
+**Bug Fix:**
+-   Display correct icon for Table Header (was always showing standard:account icon)
   
 ## 10/07/20 -  Eric Smith -    Version 2.46 
             **Updates:**        Added new Output Parameter for the # of Selected Records 
